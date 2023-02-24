@@ -10,7 +10,7 @@
 <style>
   nav {
     padding: .2em 3em;
-    background-color: #f0b46f;
+    background-color: #ab7941;
     display: flex;
     justify-content: space-between;
   }
