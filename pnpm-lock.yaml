@@ -1,24 +1,40 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@sveltejs/vite-plugin-svelte': ^2.0.2
-  '@tsconfig/svelte': ^3.0.0
-  svelte: ^3.55.1
-  svelte-check: ^2.10.3
-  tslib: ^2.5.0
-  typescript: ^4.9.3
-  vite: ^4.1.0
+  '@cloudinary/url-gen': ^1.9.1
+  '@sveltejs/vite-plugin-svelte': 2.0.2
+  '@tsconfig/svelte': 3.0.0
+  svelte: 3.55.1
+  svelte-check: 2.10.3
+  tslib: 2.5.0
+  typescript: 4.9.3
+  vite: 4.1.0
+
+dependencies:
+  '@cloudinary/url-gen': 1.9.1
 
 devDependencies:
-  '@sveltejs/vite-plugin-svelte': 2.0.2_svelte@3.55.1+vite@4.1.4
+  '@sveltejs/vite-plugin-svelte': 2.0.2_svelte@3.55.1+vite@4.1.0
   '@tsconfig/svelte': 3.0.0
   svelte: 3.55.1
   svelte-check: 2.10.3_svelte@3.55.1
   tslib: 2.5.0
-  typescript: 4.9.5
-  vite: 4.1.4
+  typescript: 4.9.3
+  vite: 4.1.0
 
 packages:
+
+  /@cloudinary/transformation-builder-sdk/1.2.6:
+    resolution: {integrity: sha512-+ae+01Z+g5DprnjP502jqc9iInRHGUEXl0eUQfHjbLI+lJ76TTP5yNqgrnMocy///z1LS/qh4lrOC8DQdKwsNA==}
+    dependencies:
+      '@cloudinary/url-gen': 1.9.1
+    dev: false
+
+  /@cloudinary/url-gen/1.9.1:
+    resolution: {integrity: sha512-P1zgWug/dMieYoA/XxYQloPCLsvm2QWG5AZoMtMqwBFKPljSlLS7o4fFCO5coCt0nv3KKTiygRMSiwKSL/XuLA==}
+    dependencies:
+      '@cloudinary/transformation-builder-sdk': 1.2.6
+    dev: false
 
   /@esbuild/android-arm/0.16.17:
     resolution: {integrity: sha512-N9x1CMXVhtWEAMS7pNNONyA14f71VPQN9Cnavj1XQh6T7bskqiLLrSca4O0Vr8Wdcga943eThxnVp3JLnBMYtw==}
@@ -255,7 +271,7 @@ packages:
       fastq: 1.15.0
     dev: true
 
-  /@sveltejs/vite-plugin-svelte/2.0.2_svelte@3.55.1+vite@4.1.4:
+  /@sveltejs/vite-plugin-svelte/2.0.2_svelte@3.55.1+vite@4.1.0:
     resolution: {integrity: sha512-xCEan0/NNpQuL0l5aS42FjwQ6wwskdxC3pW1OeFtEKNZwRg7Evro9lac9HesGP6TdFsTv2xMes5ASQVKbCacxg==}
     engines: {node: ^14.18.0 || >= 16}
     peerDependencies:
@@ -268,8 +284,8 @@ packages:
       magic-string: 0.27.0
       svelte: 3.55.1
       svelte-hmr: 0.15.1_svelte@3.55.1
-      vite: 4.1.4
-      vitefu: 0.2.4_vite@4.1.4
+      vite: 4.1.0
+      vitefu: 0.2.4_vite@4.1.0
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -841,14 +857,20 @@ packages:
     resolution: {integrity: sha512-336iVw3rtn2BUK7ORdIAHTyxHGRIHVReokCR3XjbckJMK7ms8FysBfhLR8IXnAgy7T0PTPNBWKiH514FOW/WSg==}
     dev: true
 
+  /typescript/4.9.3:
+    resolution: {integrity: sha512-CIfGzTelbKNEnLpLdGFgdyKhG23CKdKgQPOBc+OUNrkJ2vr+KSzsSV5kq5iWhEQbok+quxgGzrAtGWCyU7tHnA==}
+    engines: {node: '>=4.2.0'}
+    hasBin: true
+    dev: true
+
   /typescript/4.9.5:
     resolution: {integrity: sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==}
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true
 
-  /vite/4.1.4:
-    resolution: {integrity: sha512-3knk/HsbSTKEin43zHu7jTwYWv81f8kgAL99G5NWBcA1LKvtvcVAC4JjBH1arBunO9kQka+1oGbrMKOjk4ZrBg==}
+  /vite/4.1.0:
+    resolution: {integrity: sha512-YoUKE/9bbK4C8ZeSYMDDEF8H5aypmWUq4WisftDhntR1gkI2zt2SGT/5Wd2xu6ZoVXkCyO3U4844KWG9e4nFoQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
@@ -880,7 +902,7 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitefu/0.2.4_vite@4.1.4:
+  /vitefu/0.2.4_vite@4.1.0:
     resolution: {integrity: sha512-fanAXjSaf9xXtOOeno8wZXIhgia+CZury481LsDaV++lSvcU2R9Ch2bPh3PYFyoHW+w9LqAeYRISVQjUIew14g==}
     peerDependencies:
       vite: ^3.0.0 || ^4.0.0
@@ -888,7 +910,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 4.1.4
+      vite: 4.1.0
     dev: true
 
   /wrappy/1.0.2:
