@@ -2,6 +2,7 @@
 
   import Header from './components/header.svelte'
   import Footer from './components/footer.svelte'
+  import UploadImage from './components/UploadImage.svelte';
   import CloudinaryLogo from './components/CloudinaryLogo.svelte';
 </script>
 
@@ -12,6 +13,7 @@
     <a href="https://cloudinary.com" target="_blank" rel="noreferrer"><CloudinaryLogo /></a>
   </div>
   <h1>Customize your image!</h1>
+  <UploadImage />
   <Footer />
 </main>
 
