@@ -1,9 +1,13 @@
+<script lang="ts">
+  import {Link} from "svelte-routing"
+</script>
+
 <nav>
   <img src="" alt="logo" />
 
   <ul>
-    <a href="#"><li>Home</li></a>
-    <a href="#"><li>Contact</li></a>
+    <Link to="/"><li>Home</li></Link>
+    <Link to="contact"><li>Contact</li></Link>
   </ul>
 </nav>
 
