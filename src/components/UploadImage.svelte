@@ -23,7 +23,22 @@
     maxFilesize: 2,
     maxThumbnailFilesize: 10,
     uploadMultiple: false,
-    defaultTemplate: ''
+    defaultTemplate: null,
+  })
+
+  dropzoneElem.on("sending", (file, xhr, formData) => {
+    formData.append("upload_preset", process.env.upload_preset)
+    formData.append("timestamp", Date.now() / 1000)
+    formData.append("api_key", process.env.api_key)
+    console.log("sending")
+  })
+
+  dropzoneElem.on("success", () => {
+    console.log("Sucess!!")
+  })
+
+  dropzoneElem.on("error", () => {
+    console.error("Error: ")
   })
 
   dropzoneElem.on("addedfile", function(file) {
@@ -33,7 +48,7 @@
 </script>
 
 <div>
-  <form id="dropzone" action="submit" method="post" on:submit={e => e.preventDefault()}>
+  <form id="dropzone" action="https://api.cloudinary.com/v1_1/${process.env.cloud_name}/image/upload">
     <button>Upload file</button>
     <strong>or <span id="drop">drop</span> here a file</strong>
   </form>
