@@ -9,7 +9,7 @@
 
   const cloudinary = new Cloudinary({
     cloud: {
-      cloudName: ""
+      cloudName: import.meta.env.cloud_name
     },
     url: {
       secure: true
@@ -27,13 +27,15 @@
   })
 
   dropzoneElem.on("sending", (file, xhr, formData) => {
-    formData.append("upload_preset", process.env.upload_preset)
+    formData.append("upload_preset", import.meta.env.upload_preset)
     formData.append("timestamp", Date.now() / 1000)
-    formData.append("api_key", process.env.api_key)
+    formData.append("api_key", import.meta.env.api_key)
     console.log("sending")
   })
 
-  dropzoneElem.on("success", () => {
+  dropzoneElem.on("success", (file, response) => {
+    const {} = response
+
     console.log("Sucess!!")
   })
 
@@ -48,7 +50,7 @@
 </script>
 
 <div>
-  <form id="dropzone" action="https://api.cloudinary.com/v1_1/${process.env.cloud_name}/image/upload">
+  <form id="dropzone" action="https://api.cloudinary.com/v1_1/dm5frued2/image/upload">
     <button>Upload file</button>
     <strong>or <span id="drop">drop</span> here a file</strong>
   </form>
