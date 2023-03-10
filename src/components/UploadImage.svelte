@@ -1,9 +1,11 @@
 <script ln="ts">
+  import {onMount} from 'svelte'
+  import Dropzone from 'dropzone'
+
   import {Cloudinary} from '@cloudinary/url-gen'
   import {Resize} from '@cloudinary/url-gen/actions'
   import { crop } from '@cloudinary/url-gen/actions/resize';
-  import Dropzone from 'dropzone'
-  import {onMount} from 'svelte'
+  import { backgroundRemoval } from "@cloudinary/url-gen/actions/effect"
 
   import 'dropzone/dist/dropzone.css'
 
@@ -34,17 +36,15 @@
   })
 
   dropzoneElem.on("success", (file, response) => {
-    const {} = response
+    const {publicId: publicId, secure_url: url} = response
 
-    console.log("Sucess!!")
+    console.log("response: ", response)
+    const imgWithoutBckg = cloudinary.image(publicId).effect(backgroundRemoval())
+
   })
 
-  dropzoneElem.on("error", () => {
-    console.error("Error: ")
-  })
-
-  dropzoneElem.on("addedfile", function(file) {
-    console.log("added!")
+  dropzoneElem.on("error", (file, response) => {
+    console.error("Error: ", response)
   })
   })
 </script>
